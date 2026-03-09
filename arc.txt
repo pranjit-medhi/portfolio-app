@@ -1,0 +1,59 @@
+portfolio-api
+│
+├── src/main/java/com/portfolio
+│
+│   ├── PortfolioApplication.java
+│
+│   ├── config
+│   │     ├── SecurityConfig.java
+│   │     ├── CorsConfig.java
+│   │     └── SwaggerConfig.java
+│
+│   ├── controller
+│   │     ├── ProjectController.java
+│   │     ├── BlogController.java
+│   │     ├── MetricsController.java
+│   │     └── AuthController.java
+│
+│   ├── service
+│   │     ├── ProjectService.java
+│   │     ├── BlogService.java
+│   │     ├── MetricsService.java
+│   │     └── AuthService.java
+│
+│   ├── service/impl
+│   │     ├── ProjectServiceImpl.java
+│   │     ├── BlogServiceImpl.java
+│   │     └── MetricsServiceImpl.java
+│
+│   ├── repository
+│   │     ├── ProjectRepository.java
+│   │     ├── BlogRepository.java
+│   │     └── MetricsRepository.java
+│
+│   ├── model
+│   │     ├── Project.java
+│   │     ├── BlogPost.java
+│   │     ├── Metric.java
+│   │     └── User.java
+│
+│   ├── dto
+│   │     ├── ProjectDTO.java
+│   │     ├── BlogDTO.java
+│   │     ├── MetricDTO.java
+│   │     └── AuthDTO.java
+│
+│   ├── mapper
+│   │     ├── ProjectMapper.java
+│   │     └── BlogMapper.java
+│
+│   ├── exception
+│   │     ├── GlobalExceptionHandler.java
+│   │     └── ResourceNotFoundException.java
+│
+│   └── util
+│         └── JwtUtil.java
+│
+└── src/main/resources
+      ├── application.yml
+      └── schema.sql
