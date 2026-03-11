@@ -2,6 +2,7 @@ package com.main.controller;
 
 import com.main.dto.BlogDTO;
 import com.main.service.BlogPostService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class BlogController {
         this.service = service;
     }
 
+    @ApiResponse(responseCode = "200", description = "Success")
     @GetMapping
     public List<BlogDTO> getAllBlogs() {
         return service.getAllBlogs();
