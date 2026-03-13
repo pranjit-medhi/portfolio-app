@@ -1,0 +1,27 @@
+package com.main.event;
+
+import org.springframework.context.ApplicationEvent;
+
+
+public class ProjectEvent {
+    private String message;
+
+    public ProjectEvent( String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "ProjectEvent{" +
+                "message='" + message + '\'' +
+                '}';
+    }
+}

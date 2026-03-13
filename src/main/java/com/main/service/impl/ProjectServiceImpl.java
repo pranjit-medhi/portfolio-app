@@ -2,10 +2,12 @@ package com.main.service.impl;
 
 import com.main.dto.ProjectDTO;
 import com.main.entity.Project;
+import com.main.event.ProjectEvent;
 import com.main.exception.ResourceNotFound;
 import com.main.repository.ProjectRepository;
 import com.main.service.ProjectService;
 import org.modelmapper.ModelMapper;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,10 +18,12 @@ public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository repository;
     private final ModelMapper mapper;
+    private final ApplicationEventPublisher publisher;
 
-    public ProjectServiceImpl(ProjectRepository repository, ModelMapper mapper) {
+    public ProjectServiceImpl(ProjectRepository repository, ModelMapper mapper, ApplicationEventPublisher publisher) {
         this.repository = repository;
         this.mapper = mapper;
+        this.publisher = publisher;
     }
 
     @Override
@@ -44,6 +48,7 @@ public class ProjectServiceImpl implements ProjectService {
         project.setCreatedAt(LocalDateTime.now());
         project.setUpdatedAt(LocalDateTime.now());
         Project savedProject = repository.save(project);
+        publisher.publishEvent(new ProjectEvent("Project Created"));
         return mapper.map(savedProject, ProjectDTO.class);
     }
 
