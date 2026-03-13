@@ -291,14 +291,6 @@ or
 
 ---
 
-# 👨‍💻 Author
-
-**Your Name**
-
-Backend Developer | Java | Spring Boot
-
-GitHub:
-https://github.com/yourusername
 
 ---
 
